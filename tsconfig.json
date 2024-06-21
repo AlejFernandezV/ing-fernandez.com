@@ -5,7 +5,7 @@
     "module": "ESNext",
     "jsx": "react-jsx",
     "moduleResolution": "Node",
-    "baseUrl": "E:/Proyectos/Astro/ing-fernandez.com",
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "src/*"
