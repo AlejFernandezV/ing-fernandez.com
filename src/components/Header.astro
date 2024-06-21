@@ -17,34 +17,24 @@ const navItems = [
     label: "sobre-mi",
     url: "/#sobre-mi",
   },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:miduga@gmail.com",
-  },
 ]
 ---
-
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+<header class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2">
+  <nav class="flex px-2 py-1 lg:text-lg md:text-sm font-medium text-gray-600 dark:text-gray-200 justify-center items-center rounded-full"
   >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
+    {navItems.map((link) => (
+      <a
+        class="relative block px-2 py-1 transition hover:text-turquoise dark:hover:turquoise"
+        aria-label={link.label}
+        href={link.url}
+      >
+        {link.title}
+      </a>
+    ))}
     <ThemeToggle />
   </nav>
 </header>
+
 
 <script>
   document.addEventListener("astro:page-load", () => {
@@ -56,9 +46,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add("text-turquoise")
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove("text-turquoise")
             }
           })
         }

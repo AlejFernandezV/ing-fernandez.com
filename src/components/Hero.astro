@@ -2,19 +2,19 @@
 const personalImageAlt = "Miguel Ángel"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import GitHub from "@/components/icons/GitHub.astro"
+import EmailPill from "@/components/EmailPill.astro"
 ---
-
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
+      src="/me.webp"
       alt={personalImageAlt}
     />
     <a
-      href="https://linkedin.com/in/midudev"
+      href="https://linkedin.com/in/alejfernandezv"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
@@ -22,27 +22,39 @@ import SocialPill from "@/components/SocialPill.astro"
       <Badge>Disponible para trabajar</Badge>
     </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hey, soy midudev
+  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+    ¡Hey! Soy Alejandro Fernández
   </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    +15 años de experiencia. <strong
-      >Ingeniero de Software y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
+  <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+    Pronto<strong> Ingeniero de Sistemas</strong> egresado de la
+    <strong>
+      <a target="_blank" href="https://www.unicauca.edu.co/versionP/" class="hover:underline">
+        Universidad del Cauca
+      </a>
+    </strong>
+    de Popayán, Colombia 🇨🇴. Encaminado al desarrollo 
+    <strong>BackEnd</strong>
+     para aplicaciones
+    Web...
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:miduga@gmail.com">
-      <MailIcon class="size-4" />
-      Contáctame
+
+    <EmailPill/>
+    <SocialPill href="https://github.com/AlejFernandezV">
+      <GitHub class="size-4" />
+      GitHub
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/midudev">
+    <SocialPill href="https://www.linkedin.com/in/alejfernandezv/">
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
+    <SocialPill href="/doc/CV-AlejandroFernandez.pdf">
+      Ver CV
+    </SocialPill>
   </nav>
 </div>
+<style>
+  strong {
+    @apply text-turquoise dark:text-aquamarine;
+  }
+</style>

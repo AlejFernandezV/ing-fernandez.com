@@ -1,9 +1,15 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import { NeonGradientCard } from "./magicui/neon-gradient-card";
+import Java from "./icons/Java.astro";
+import Angular from "./icons/Angular.astro";
+import Spring from "./icons/Spring.astro";
+import RetroGrid from "@/components/magicui/retro-grid";
+import MySQL from "@/components/icons/MySQL.astro";
 
 const TAGS = {
   NEXT: {
@@ -16,78 +22,122 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
+  JAVA: {
+    name: "Java",
+    class: "bg-orange-600 text-white",
+    icon: Java,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-red-600 text-white",
+    icon: Angular,
+  },
+  SPRING: {
+    name: "Spring Boot",
+    class: "bg-green-600 text-white",
+    icon: Spring,
+  },
+  MYSQL:{
+    name: "MySQL",
+    class: "bg-gradient-to-r from-blue-700 to-orange-500 text-white",
+    icon: MySQL
+  }
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "CONT APP - Aplicación contable",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Aplicación para llevar la contabilidad de tu empresa. Aún en desarrollo. Creada con Angular y Tailwind CSS.",
+    link: "http://contables.unicauca.edu.co/#/",
+    image: "/projects/contapp.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+    github: ""
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    title: "Manejo de Terceros en CONT APP - Microservicio",
+    description: "Microservicio encargado de la gestión de la información de los terceros para cada empresa en CONT APP. Creado con Java y Spring Boot",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL],
+    github: ""
   },
-]
+  {
+    title: "Manejo de Facturas en CONT APP - Microservicio",
+    description: "Microservicio encargado del manejo y generación de facturas en formato PDF. Creado con Java y Spring Boot",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL],
+    github: ""
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <NeonGradientCard
+            class="neon-gradient-card relative flex flex-col items-center justify-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+            client:load
+          >
+            {image ? (
+              <img
+                alt="¡Ups!"
+                class="object-cover object-center w-full h-full transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            ) : (
+              <div class="flex flex-col items-center justify-center w-full h-full">
+                <span class="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#7FFFD4] via-[#5dc1b9] to-[#49678d] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
+                  BackEnd Project
+                </span>
+                <RetroGrid/>
+              </div>
+            )}
+          </NeonGradientCard>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
+<style>
+  .neon-gradient-card {
+    z-index: 10;
+  }
+</style>

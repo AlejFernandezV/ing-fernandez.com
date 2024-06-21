@@ -1,11 +1,23 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "baseUrl": "E:/Proyectos/Astro/ing-fernandez.com",
     "paths": {
       "@/*": [
         "src/*"
       ]
-    }
-  }
+    },
+    "types": [
+      "react",
+      "react-dom"
+    ],
+    "jsxImportSource": "react"
+  },
+  "include": [
+    "src"
+  ]
 }
