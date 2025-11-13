@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
+import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
   {
@@ -17,65 +17,70 @@ const navItems = [
     label: "sobre-mi",
     url: "/#sobre-mi",
   },
-]
+];
 ---
-<header class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2">
-  <nav class="flex px-2 py-1 lg:text-lg md:text-sm font-medium text-gray-600 dark:text-gray-200 justify-center items-center rounded-full"
+
+<header
+  class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="flex px-2 py-1 lg:text-lg md:text-sm font-medium text-gray-600 dark:text-gray-200 justify-center items-center rounded-full"
   >
-    {navItems.map((link) => (
-      <a
-        class="relative block px-2 py-1 transition hover:text-turquoise dark:hover:turquoise"
-        aria-label={link.label}
-        href={link.url}
-      >
-        {link.title}
-      </a>
-    ))}
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-1 transition hover:text-red dark:hover:red"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
     <ThemeToggle />
   </nav>
 </header>
 
-
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-turquoise")
+              item.classList.add("text-red");
             } else {
-              item.classList.remove("text-turquoise")
+              item.classList.remove("text-red");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>

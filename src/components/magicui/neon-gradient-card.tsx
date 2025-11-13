@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import type { ReactElement, ReactNode, CSSProperties } from "react";
-import { cn } from "@/lib/utils";  // Asegúrate de que la ruta es correcta
+import { cn } from "@/lib/utils"; // Asegúrate de que la ruta es correcta
 
 interface NeonColorsProps {
   firstColor: string;
@@ -20,11 +20,11 @@ interface NeonGradientCardProps {
 const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
   className,
   children,
-  borderSize = 3,
+  borderSize = 1,
   borderRadius = 10,
   neonColors = {
-    firstColor: "#5dc1b9",
-    secondColor: "#49678d",
+    firstColor: "#FF002B",
+    secondColor: "#ff3355",
   },
   ...props
 }) => {
@@ -69,7 +69,7 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "--pseudo-element-background-image": `linear-gradient(0deg, ${neonColors.firstColor}, ${neonColors.secondColor})`,
           "--pseudo-element-width": `${dimensions.width + borderSize * 2}px`,
           "--pseudo-element-height": `${dimensions.height + borderSize * 2}px`,
-          "--after-blur": `${dimensions.width / 3}px`,
+          "--after-blur": `${dimensions.width / 15}px`,
         } as CSSProperties
       }
       className={cn(

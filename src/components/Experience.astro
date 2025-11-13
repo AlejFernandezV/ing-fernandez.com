@@ -1,66 +1,37 @@
 ---
-import Particles from "./magicui/particles"
-/*
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+import Particles from "./magicui/particles";
+
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    date: "Agosto 2025 - Actualmente...",
+    title: "Arquitecto de Soluciones Cloud - Pasante",
+    company: "Huawei Technologies",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Asistencia en el diseño e implementación de soluciones en la nube, contribuyendo al desarrollo de arquitecturas escalables, seguras y alineadas con las mejores prácticas del sector.",
   },
-  {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
-    description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
-  },
-]
-*/
+];
 ---
 
 <div class="flex flex-col gap-y-16 relative">
-  <!-- Contenedor de partículas posicionado detrás de la imagen y el texto -->
-  <div class="absolute inset-0 z-10">
-    <Particles className="w-full h-full" quantity={400} ease={80} refresh client:load />
-  </div>
-
   <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
-    <!-- Imagen a la izquierda en dispositivos grandes -->
-    <div class="md:w-1/2">
-      <img src="/rocket.png" alt="Imagen del cohete" class="w-full" />
-    </div>
-
-    <!-- Párrafo a la derecha en dispositivos grandes -->
-    <div class="md:w-1/2 text-gray-700 dark:text-gray-300">
-      <h3 class="text-center text-2xl font-bold text-gray-800 dark:text-gray-100">
-        👨🏽‍🚀🌍🚀 Despegando...
-      </h3>
-      <p class="m-2 p-2">
-        Como estudiante a punto de graduarme, debo admitir que mi experiencia 
-        laboral en el desarrollo web es <strong>limitada</strong>.
-        Sin embargo, he tenido la oportunidad de trabajar en varios 
-        <strong>proyectos</strong> relacionados con el backend, 
-        lo que me ha permitido adquirir <strong>habilidades sólidas</strong> en ese aspecto. 
-        Además, de también haber participado en el <strong>frontend</strong> de distintos proyectos, lo que me 
-        ha dado una comprensión básica pero significativa de ese campo. 
-      </p>
-    </div>
+    <ol class="relative mt-16">
+      {
+        EXPERIENCE.map((experience) => (
+          <li class="">
+            <ExperienceItem {...experience} />
+          </li>
+        ))
+      }
+    </ol>
   </div>
+
+  <style>
+    img {
+      mask-image: linear-gradient(black 70%, transparent);
+    }
+    strong {
+      @apply text-red dark:text-redlight;
+    }
+  </style>
 </div>
-
-
-<style>
-  img{
-    mask-image: linear-gradient(
-      black 70%,
-      transparent
-    );
-  }
-  strong {
-    @apply text-turquoise dark:text-aquamarine;
-  }
-</style>

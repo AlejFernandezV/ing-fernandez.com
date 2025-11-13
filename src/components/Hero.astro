@@ -1,11 +1,12 @@
 ---
-const personalImageAlt = "Miguel Ángel"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import SocialPill from "@/components/SocialPill.astro"
-import GitHub from "@/components/icons/GitHub.astro"
-import EmailPill from "@/components/EmailPill.astro"
+const personalImageAlt = "Miguel Ángel";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import GitHub from "@/components/icons/GitHub.astro";
+import EmailPill from "@/components/EmailPill.astro";
 ---
+
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
@@ -22,24 +23,30 @@ import EmailPill from "@/components/EmailPill.astro"
       <Badge>Disponible para trabajar</Badge>
     </a>
   </div>
-  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
     ¡Hey! Soy Alejandro Fernández
   </h1>
-  <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
     Pronto<strong> Ingeniero de Sistemas</strong> egresado de la
     <strong>
-      <a target="_blank" href="https://www.unicauca.edu.co/versionP/" class="hover:underline">
+      <a
+        target="_blank"
+        href="https://www.unicauca.edu.co/versionP/"
+        class="hover:underline"
+      >
         Universidad del Cauca
       </a>
     </strong>
-    de Popayán, Colombia 🇨🇴. Encaminado al desarrollo 
+    de Popayán, Colombia 🇨🇴. Encaminado al desarrollo
     <strong>BackEnd</strong>
-     para aplicaciones
-    Web...
+    para aplicaciones Web...
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-
-    <EmailPill/>
+    <EmailPill />
     <SocialPill href="https://github.com/AlejFernandezV">
       <GitHub class="size-4" />
       GitHub
@@ -48,13 +55,11 @@ import EmailPill from "@/components/EmailPill.astro"
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="/doc/Alejandro_Fernandez-CV_ESP.pdf">
-      Ver CV
-    </SocialPill>
+    <SocialPill href="/doc/Alejandro_Fernandez-CV_ESP.pdf"> Ver CV </SocialPill>
   </nav>
 </div>
 <style>
   strong {
-    @apply text-turquoise dark:text-aquamarine;
+    @apply text-red dark:text-redlight;
   }
 </style>

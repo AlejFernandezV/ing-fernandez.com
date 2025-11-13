@@ -36,8 +36,9 @@ export default {
       },
       colors: {
         "dark-blue": "#00008B", // Azul oscuro para el modo claro
-        aquamarine: "#7FFFD4", // Azul aguamarina para el modo oscuro
-        turquoise: "#5dc1b9",
+        redlight: "#ff3355", // Rojo claro para el modo oscuro
+        red: "#FF002B",
+        reddark: "#cc0022",
         "far-blue": "#49678d",
       },
     },
