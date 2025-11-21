@@ -1,21 +1,29 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import LanguageSwitch from "./LanguageSwitch.astro";
+
+// Recibimos los textos
+const { i18n } = Astro.props;
+const { currentLocale } = Astro;
+
+// Definimos la base para los enlaces (si es inglés, agregamos /en)
+const homeUrl = currentLocale === "en" ? "/en" : "";
 
 const navItems = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: i18n.nav.experience, // Texto traducido
+    label: "experiencia", // El label se mantiene igual para que el script del scroll funcione
+    url: `${homeUrl}/#experiencia`,
   },
   {
-    title: "Proyectos",
+    title: i18n.nav.projects,
     label: "proyectos",
-    url: "/#proyectos",
+    url: `${homeUrl}/#proyectos`,
   },
   {
-    title: "Sobre mí",
+    title: i18n.nav.about,
     label: "sobre-mi",
-    url: "/#sobre-mi",
+    url: `${homeUrl}/#sobre-mi`,
   },
 ];
 ---
@@ -37,7 +45,11 @@ const navItems = [
         </a>
       ))
     }
+
+    <div class="mx-1 w-[1px] h-4 bg-gray-300 dark:bg-gray-600"></div>
+
     <ThemeToggle />
+    <LanguageSwitch />
   </nav>
 </header>
 

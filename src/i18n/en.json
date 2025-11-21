@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Alejandro Fernández Portfolio - Backend Web Developer & Programmer",
+    "description": "Hire Alejandro Fernández to create your web application or backend. Systems Engineer and Web Developer from Colombia. Specialized in building unique solutions."
+  },
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About me"
+  },
+  "hero": {
+    "image_alt": "Alejandro Fernández Profile Picture",
+    "badge": "Available for work",
+    "title": "Hey! I'm Alejandro Fernández",
+    "intro_1": "Soon to be",
+    "role": "Systems Engineer",
+    "intro_2": "graduated from",
+    "university": "University of Cauca",
+    "location": "in Popayán, Colombia 🇨🇴. Focused on",
+    "focus": "BackEnd",
+    "focus_desc": "development for Web applications...",
+    "cv_button": "View CV",
+    "cv_link": "/doc/Alejandro_Fernandez-CV_ENG.pdf"
+  }
+}

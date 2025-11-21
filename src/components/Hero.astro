@@ -1,10 +1,12 @@
 ---
-const personalImageAlt = "Miguel Ángel";
 import Badge from "@/components/Badge.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import SocialPill from "@/components/SocialPill.astro";
 import GitHub from "@/components/icons/GitHub.astro";
 import EmailPill from "@/components/EmailPill.astro";
+
+// Recibimos el diccionario de traducciones
+const { i18n } = Astro.props;
 ---
 
 <div class="max-w-xl">
@@ -12,7 +14,7 @@ import EmailPill from "@/components/EmailPill.astro";
     <img
       class="rounded-full shadow-lg size-16"
       src="/me.webp"
-      alt={personalImageAlt}
+      alt={i18n.hero.image_alt}
     />
     <a
       href="https://linkedin.com/in/alejfernandezv"
@@ -20,30 +22,32 @@ import EmailPill from "@/components/EmailPill.astro";
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>{i18n.hero.badge}</Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    ¡Hey! Soy Alejandro Fernández
+    {i18n.hero.title}
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    Pronto<strong> Ingeniero de Sistemas</strong> egresado de la
+    {i18n.hero.intro_1}
+    <strong>{i18n.hero.role}</strong>
+    {i18n.hero.intro_2}
     <strong>
       <a
         target="_blank"
         href="https://www.unicauca.edu.co/versionP/"
         class="hover:underline"
       >
-        Universidad del Cauca
+        {i18n.hero.university}
       </a>
     </strong>
-    de Popayán, Colombia 🇨🇴. Encaminado al desarrollo
-    <strong>BackEnd</strong>
-    para aplicaciones Web...
+    {i18n.hero.location}
+    <strong>{i18n.hero.focus}</strong>
+    {i18n.hero.focus_desc}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <EmailPill />
@@ -55,9 +59,11 @@ import EmailPill from "@/components/EmailPill.astro";
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="/doc/Alejandro_Fernandez-CV_ESP.pdf"> Ver CV </SocialPill>
+    {/* Aquí usamos el link dinámico por si tienes un CV en inglés */}
+    <SocialPill href={i18n.hero.cv_link}> {i18n.hero.cv_button} </SocialPill>
   </nav>
 </div>
+
 <style>
   strong {
     @apply text-red dark:text-redlight;

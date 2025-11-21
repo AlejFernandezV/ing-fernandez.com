@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Portafolio de Alejandro Fernández - Desarrollador y Programador Web Backend",
+    "description": "Contrata a Alejandro Fernández para crear tu aplicación web o backend. Ingeniero de Sistemas y Desarrollador Web de Colombia. Especializado en crear soluciones únicas."
+  },
+  "nav": {
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "about": "Sobre mí"
+  },
+  "hero": {
+    "image_alt": "Foto de perfil de Alejandro Fernández",
+    "badge": "Disponible para trabajar",
+    "title": "¡Hey! Soy Alejandro Fernández",
+    "intro_1": "Pronto",
+    "role": "Ingeniero de Sistemas",
+    "intro_2": "egresado de la",
+    "university": "Universidad del Cauca",
+    "location": "de Popayán, Colombia 🇨🇴. Encaminado al desarrollo",
+    "focus": "BackEnd",
+    "focus_desc": "para aplicaciones Web...",
+    "cv_button": "Ver CV",
+    "cv_link": "/doc/Alejandro_Fernandez-CV_ESP.pdf"
+  }
+}
