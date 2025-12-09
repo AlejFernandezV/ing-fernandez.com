@@ -1,7 +1,7 @@
 ---
 import GitHub from "./icons/GitHub.astro";
-import NextJS from "./icons/NextJS.astro";
-import Tailwind from "./icons/Tailwind.astro";
+import AstroIcon from "@/components/icons/AstroIcon.astro";
+import Tailwind from "@/components/icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import { NeonGradientCard } from "./magicui/neon-gradient-card";
@@ -10,12 +10,13 @@ import Angular from "./icons/Angular.astro";
 import Spring from "./icons/Spring.astro";
 import RetroGrid from "@/components/magicui/retro-grid";
 import MySQL from "@/components/icons/MySQL.astro";
+import PostgreSQL from "@/components/icons/Postgre.astro";
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#ff5f01] text-white",
+    icon: AstroIcon,
   },
   TAILWIND: {
     name: "Tailwind CSS",
@@ -42,6 +43,11 @@ const TAGS = {
     class: "bg-gradient-to-r from-blue-700 to-orange-500 text-white",
     icon: MySQL,
   },
+  POSTGRE: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: PostgreSQL,
+  },
 };
 const PROJECTS = [
   {
@@ -55,10 +61,37 @@ const PROJECTS = [
     github: "",
   },
   {
+    title: "Portafolio Personal",
+    projectType: "Sitio Web",
+    description:
+      "Portafolio personal desarrollado con Astro, mostrando proyectos, habilidades y experiencia profesional.",
+    link: "https://ingfernandez.cloud",
+    image: "",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    github: "https://github.com/AlejFernandezV/ing-fernandez.com",
+  },
+  {
+    title: "Mapa con Marcadores",
+    projectType: "Aplicación Web",
+    description: "Aplicación que permite la creación de .",
+    link: "http://contables.unicauca.edu.co/dev/#/login",
+    image: "",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    github: "https://github.com/AlejFernandezV/ing-fernandez.com",
+  },
+  {
+    title: "Manejo de Libros Auxiliares en CONT APP - Microservicio",
+    projectType: "Proyecto BackEnd",
+    description:
+      "Microservicio encargado de la generación de Libros Auxiliares para cada empresa en CONT APP. Genera PDFs y Excels con la información contable correspondiente.",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.POSTGRE],
+    github: "",
+  },
+  {
     title: "Manejo de Terceros en CONT APP - Microservicio",
     projectType: "Proyecto BackEnd",
     description:
-      "Microservicio encargado de la gestión de la información de los terceros para cada empresa en CONT APP. Creado con Java y Spring Boot",
+      "Microservicio encargado de la gestión de la información de los terceros para cada empresa en CONT APP.",
     tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL],
     github: "",
   },
