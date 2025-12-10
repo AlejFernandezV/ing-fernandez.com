@@ -17,8 +17,10 @@
     "intro_2": "egresado de la",
     "university": "Universidad del Cauca",
     "location": "de Popayán, Colombia 🇨🇴. Encaminado al desarrollo",
-    "focus": "BackEnd",
-    "focus_desc": "para aplicaciones Web...",
+    "focus": "FullStack",
+    "focus_connector": " con experiencia en ",
+    "second_focus": "Cloud Computing",
+    "focus_desc": "para el desarrollo de aplicaciones Web...",
     "cv_button": "Ver CV",
     "cv_link": "/doc/Alejandro_Fernandez-CV_ESP.pdf"
   }

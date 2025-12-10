@@ -66,21 +66,22 @@ const PROJECTS = [
     description:
       "Portafolio personal desarrollado con Astro, mostrando proyectos, habilidades y experiencia profesional.",
     link: "https://ingfernandez.cloud",
-    image: "",
+    image: "/projects/portfolio.webp",
     tags: [TAGS.ASTRO, TAGS.TAILWIND],
     github: "https://github.com/AlejFernandezV/ing-fernandez.com",
   },
   {
-    title: "Mapa con Marcadores",
+    title: "Marcadores Geográficos",
     projectType: "Aplicación Web",
-    description: "Aplicación que permite la creación de .",
-    link: "http://contables.unicauca.edu.co/dev/#/login",
-    image: "",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
-    github: "https://github.com/AlejFernandezV/ing-fernandez.com",
+    description:
+      "Aplicación que permite la creación de marcadores geográficos para guardar puntos de interes dentro de un mapa.",
+    link: "https://map-app-front.vercel.app/",
+    image: "/projects/marcadores.webp",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.JAVA],
+    github: "https://github.com/AlejFernandezV/map-app-front",
   },
   {
-    title: "Manejo de Libros Auxiliares en CONT APP - Microservicio",
+    title: "Manejo de Libros Auxiliares",
     projectType: "Proyecto BackEnd",
     description:
       "Microservicio encargado de la generación de Libros Auxiliares para cada empresa en CONT APP. Genera PDFs y Excels con la información contable correspondiente.",
@@ -88,7 +89,7 @@ const PROJECTS = [
     github: "",
   },
   {
-    title: "Manejo de Terceros en CONT APP - Microservicio",
+    title: "Manejo de Terceros",
     projectType: "Proyecto BackEnd",
     description:
       "Microservicio encargado de la gestión de la información de los terceros para cada empresa en CONT APP.",
@@ -96,7 +97,7 @@ const PROJECTS = [
     github: "",
   },
   {
-    title: "Manejo de Facturas en CONT APP - Microservicio",
+    title: "Manejo de Facturas",
     projectType: "Proyecto BackEnd",
     description:
       "Microservicio encargado del manejo y generación de facturas en formato PDF. Creado con Java y Spring Boot",
@@ -113,13 +114,13 @@ const PROJECTS = [
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2">
             <NeonGradientCard
-              class="neon-gradient-card relative flex flex-col items-center justify-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+              class="neon-gradient-card aspect-video relative flex flex-col items-center justify-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
               client:load
             >
               {image ? (
                 <img
                   alt="¡Ups!"
-                  class="object-cover object-center w-full h-full transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                  class="object-cover object-top w-full h-full transition duration-500 md:group-hover:scale-105"
                   loading="lazy"
                   src={image}
                 />
