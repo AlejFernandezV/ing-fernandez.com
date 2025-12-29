@@ -1,16 +1,16 @@
 ---
 const { url } = Astro;
-// Obtenemos el idioma actual directamente de los parámetros de la URL ([lang])
-const { lang } = Astro.params;
+const { lang = "es" } = Astro.params;
 
-// Determinamos el idioma al que queremos ir
 const targetLang = lang === "es" ? "en" : "es";
-
-// Reemplazamos el segmento del idioma actual con el nuevo
-// Ejemplo: convierte "/es" en "/en" o "/es/proyectos" en "/en/proyectos"
-const targetPath = url.pathname.replace(`/${lang}`, `/${targetLang}`);
+const currentPath = url.pathname.replace(new RegExp(`^/${lang}`), "");
+const targetPath = `/${targetLang}${currentPath}${url.search}${url.hash}`;
 ---
 
-<a href={targetPath} class="hover:scale-110 transition-transform mx-2 text-xl">
-  {lang === "es" ? "🇺🇸" : "🇪🇸"}
+<a
+  href={targetPath}
+  class="hover:scale-110 transition-transform mx-2 text-xl font-semibold"
+  aria-label={lang === "es" ? "Switch to English" : "Cambiar a español"}
+>
+  {targetLang.toUpperCase()}
 </a>

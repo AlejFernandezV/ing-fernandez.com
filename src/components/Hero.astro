@@ -52,7 +52,7 @@ const { i18n } = Astro.props;
     {i18n.hero.focus_desc}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <EmailPill />
+    <EmailPill i18n={i18n} />
     <SocialPill href="https://github.com/AlejFernandezV">
       <GitHub class="size-4" />
       GitHub

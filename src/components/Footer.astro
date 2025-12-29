@@ -1,5 +1,17 @@
 ---
+const { i18n } = Astro.props;
 const currentYear = new Date().getFullYear();
+const basePath = i18n?.locale ? `/${i18n.locale}` : "";
+const heroId = i18n?.sections?.hero?.id ?? "inicio";
+const contactHref = `${basePath}/#${heroId}`;
+
+const noticeTemplate =
+  i18n?.footer?.notice ??
+  `© {year} Portafolio inspirado en el desarrollado por {creator}. Casi todos los derechos reservados.`;
+const noticeWithYear = noticeTemplate.replace("{year}", currentYear.toString());
+const [noticeStart, noticeEnd = ""] = noticeWithYear.split("{creator}");
+const creatorName = "midudev";
+const contactLabel = i18n?.footer?.contact ?? "Contacto";
 ---
 
 <footer
@@ -8,19 +20,20 @@ const currentYear = new Date().getFullYear();
   <div
     class="rounded-lg w-full max-w-screen-xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between py-4"
   >
-    <span class="text-sm text-center md:text-left text-zinc-800/90 dark:text-zinc-200/90 mb-4 md:mb-0"
-      >© {currentYear}
-      Portfolio inspirado en el desarrollado por <a
+    <span class="text-sm text-center md:text-left text-zinc-800/90 dark:text-zinc-200/90 mb-4 md:mb-0">
+      {noticeStart}
+      <a
         href="https://midu.dev/"
         target="_blank"
-        class="hover:underline">midudev</a
-      >. Casi todos los derechos reservados
+        class="hover:underline"
+        >{creatorName}</a
+      >{noticeEnd}
     </span>
     <ul
       class="flex flex-col md:flex-row items-center justify-center md:justify-start mt-3 md:mt-0 text-sm font-medium dark:text-white/90"
     >
       <li>
-        <a href="/#inicio" class="hover:underline">Contacto</a>
+        <a href={contactHref} class="hover:underline">{contactLabel}</a>
       </li>
     </ul>
   </div>

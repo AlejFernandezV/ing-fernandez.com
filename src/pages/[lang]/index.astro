@@ -9,6 +9,7 @@ import Projects from "@/components/Projects.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import { getI18N } from "@/lib/i18n";
+
 export function getStaticPaths() {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
@@ -18,42 +19,47 @@ const { lang } = Astro.params;
 const i18n = getI18N({ currentLocale: lang });
 ---
 
-<Layout title={i18n.seo.title} description={i18n.seo.description} i18n={i18n}>
+<Layout
+  title={i18n.seo.title}
+  description={i18n.seo.description}
+  i18n={i18n}
+  lang={lang}
+>
   <main class="px-4">
-    <SectionContainer id="inicio" class="py-16 md:py-36">
+    <SectionContainer id={i18n.sections.hero.id} class="py-16 md:py-36">
       <Hero i18n={i18n} />
     </SectionContainer>
   </main>
 
   <div class="space-y-24 md:space-y-12 ml-2">
-    <SectionContainer id="experiencia">
+    <SectionContainer id={i18n.sections.experience.id}>
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
         <Briefcase class="size-8" />
-        Experiencia
+        {i18n.sections.experience.title}
       </h2>
-      <Experience />
+      <Experience i18n={i18n} />
     </SectionContainer>
 
-    <SectionContainer id="proyectos">
+    <SectionContainer id={i18n.sections.projects.id}>
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
         <CodeIcon class="size-7" />
-        Proyectos
+        {i18n.sections.projects.title}
       </h2>
-      <Projects />
+      <Projects i18n={i18n} />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id={i18n.sections.about.id}>
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
       >
         <ProfileCheck class="size-8" />
-        Sobre mí
+        {i18n.sections.about.title}
       </h2>
-      <AboutMe />
+      <AboutMe i18n={i18n} />
     </SectionContainer>
   </div>
 </Layout>

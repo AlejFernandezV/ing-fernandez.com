@@ -1,25 +1,122 @@
 {
+  "locale": "en",
   "seo": {
-    "title": "Alejandro Fernández Portfolio - Backend Web Developer & Programmer",
-    "description": "Hire Alejandro Fernández to create your web application or backend. Systems Engineer and Web Developer from Colombia. Specialized in building unique solutions."
+    "title": "Alejandro Fernández Portfolio - Backend Web Developer",
+    "description": "Hire Alejandro Fernández to build your web application or backend. Systems Engineer and Web Developer from Colombia. Specialized in building unique solutions."
   },
-  "nav": {
-    "experience": "Experience",
-    "projects": "Projects",
-    "about": "About me"
+  "nav": [
+    { "id": "experience", "label": "Experience" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "about-me", "label": "About me" }
+  ],
+  "sections": {
+    "hero": { "id": "home" },
+    "experience": { "id": "experience", "title": "Experience" },
+    "projects": { "id": "projects", "title": "Projects" },
+    "about": { "id": "about-me", "title": "About me" }
   },
   "hero": {
-    "image_alt": "Alejandro Fernández Profile Picture",
+    "image_alt": "Alejandro Fernández profile picture",
     "badge": "Available for work",
     "title": "Hey! I'm Alejandro Fernández",
-    "intro_1": "Soon to be",
+    "intro_1": "Soon-to-be ",
     "role": "Systems Engineer",
-    "intro_2": "graduated from",
+    "intro_2": " graduated from ",
     "university": "University of Cauca",
-    "location": "in Popayán, Colombia 🇨🇴. Focused on",
+    "location": " in Popayán, Colombia 🇨🇴. Focused on ",
     "focus": "BackEnd",
-    "focus_desc": "development for Web applications...",
+    "focus_desc": " development for web applications...",
     "cv_button": "View CV",
     "cv_link": "/doc/Alejandro_Fernandez-CV_ENG.pdf"
+  },
+  "experience": {
+    "items": [
+      {
+        "date": "August 2025 - Present",
+        "title": "Cloud Solutions Architect - Intern",
+        "company": "Huawei Technologies",
+        "description": "Assist in designing and implementing cloud solutions, contributing to scalable, secure architectures aligned with industry best practices."
+      }
+    ],
+    "cta": "Learn more"
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "CONT APP - Accounting app",
+        "projectType": "Web application",
+        "description": "Academic accounting app designed to prepare Public Accounting students at Universidad del Cauca to use a real accounting system. Currently in development.",
+        "link": "http://contables.unicauca.edu.co/dev/#/login",
+        "image": "/projects/contapp.webp",
+        "tags": ["ANGULAR", "TAILWIND"]
+      },
+      {
+        "title": "Personal portfolio",
+        "projectType": "Website",
+        "description": "Personal portfolio built with Astro showcasing projects, skills, and professional experience.",
+        "link": "https://ing-fernandez.com",
+        "image": "",
+        "tags": ["ASTRO", "TAILWIND"],
+        "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
+      },
+      {
+        "title": "Map with markers",
+        "projectType": "Web application",
+        "description": "Application that allows creating markers on an interactive map.",
+        "link": "",
+        "image": "",
+        "tags": ["ASTRO", "TAILWIND"],
+        "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
+      },
+      {
+        "title": "Auxiliary Books in CONT APP - Microservice",
+        "projectType": "Backend project",
+        "description": "Microservice responsible for generating auxiliary books for each company in CONT APP. Produces PDFs and Excels with the corresponding accounting information.",
+        "link": "",
+        "image": "",
+        "tags": ["JAVA", "SPRING", "POSTGRE"]
+      },
+      {
+        "title": "Third-party management in CONT APP - Microservice",
+        "projectType": "Backend project",
+        "description": "Microservice in charge of managing third-party information for each company in CONT APP.",
+        "link": "",
+        "image": "",
+        "tags": ["JAVA", "SPRING", "MYSQL"]
+      },
+      {
+        "title": "Invoice management in CONT APP - Microservice",
+        "projectType": "Backend project",
+        "description": "Microservice responsible for handling and generating invoices in PDF format. Built with Java and Spring Boot.",
+        "link": "",
+        "image": "",
+        "tags": ["JAVA", "SPRING", "MYSQL"]
+      }
+    ],
+    "actions": {
+      "code": "Code",
+      "preview": "Preview"
+    }
+  },
+  "about": {
+    "image_alt": "Photo of Alejandro Fernández",
+    "paragraphs": [
+      "I'm Alejandro Fernández, a Systems Engineering student about to graduate. During my studies I've worked with Java, JavaScript, TypeScript, HTML, and Python. I have taken part in projects involving web application development, especially the backend.",
+      "As an upcoming engineer I'm ready to contribute with innovative technological solutions, bringing my knowledge and continuing to grow professionally in a dynamic environment."
+    ]
+  },
+  "contact": {
+    "email": {
+      "label": "Contact me",
+      "copied": "Copied to clipboard"
+    }
+  },
+  "footer": {
+    "notice": "© {year} Portfolio inspired by {creator}. Almost all rights reserved.",
+    "contact": "Contact"
+  },
+  "languageSwitch": {
+    "current": "EN",
+    "target": "ES"
   }
 }

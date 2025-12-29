@@ -7,13 +7,14 @@ interface Props {
   description: string;
   link?: string;
   date: string;
+  ctaLabel?: string;
 }
 
-const { title, company, description, link, date } = Astro.props;
+const { title, company, description, link, date, ctaLabel } = Astro.props as Props;
 ---
 
 <div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4"
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
@@ -37,7 +38,7 @@ const { title, company, description, link, date } = Astro.props;
     {
       link && (
         <LinkInline href={link}>
-          Saber más{" "}
+          {ctaLabel}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"

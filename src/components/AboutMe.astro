@@ -1,6 +1,9 @@
 ---
 import { BorderBeam } from "./magicui/border-beam";
-const personalImageAlt = "Miguel Ángel";
+
+const { i18n } = Astro.props;
+const paragraphs = i18n.about?.paragraphs ?? [];
+const imageAlt = i18n.about?.image_alt ?? "Alejandro Fernandez";
 ---
 
 <article
@@ -14,27 +17,7 @@ const personalImageAlt = "Miguel Ángel";
        dark:[&>p>strong]:text-redlight [&>p>strong]:font-roboto
        [&>p>strong]:font-roboto text-pretty order-2 md:order-1"
     >
-      <p>
-        Soy Alejandro Fernández. Estudiante de
-        <strong> Ingeniería de sistemas </strong>
-        próximo a graduarme. Durante mis estudios, he trabajado con lenguajes como
-        <strong> Java </strong>,
-        <strong> TypeScript </strong>,
-        <strong> HTML </strong>,
-        <strong> Python </strong>,
-        <strong> Etc </strong>
-        . Donde he participado en proyectos que incluyen el desarrollo de aplicaciones
-        web, especialmente en el
-        <strong> BackEnd </strong>
-        de estas mismas.
-      </p>
-
-      <p>
-        Como próximo ingeniero estoy preparado para contribuir con
-        <strong> soluciones tecnológicas innovadoras </strong>
-        aportando así mis conocimientos en tecnología y continuar creciendo profesionalmente
-        en un entorno dinámico.
-      </p>
+      {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
     </div>
   </div>
 
@@ -42,7 +25,7 @@ const personalImageAlt = "Miguel Ángel";
     width="200"
     height="200"
     src="/me2.webp"
-    alt={personalImageAlt}
+    alt={imageAlt}
     class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl"
     style="object-position: 50% 50%"
   />

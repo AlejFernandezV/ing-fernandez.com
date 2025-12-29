@@ -1,20 +1,27 @@
 {
+  "locale": "es",
   "seo": {
-    "title": "Portafolio de Alejandro Fernández - Desarrollador y Programador Web Backend",
+    "title": "Portafolio de Alejandro Fernández - Desarrollador Backend",
     "description": "Contrata a Alejandro Fernández para crear tu aplicación web o backend. Ingeniero de Sistemas y Desarrollador Web de Colombia. Especializado en crear soluciones únicas."
   },
-  "nav": {
-    "experience": "Experiencia",
-    "projects": "Proyectos",
-    "about": "Sobre mí"
+  "nav": [
+    { "id": "experiencia", "label": "Experiencia" },
+    { "id": "proyectos", "label": "Proyectos" },
+    { "id": "sobre-mi", "label": "Sobre mí" }
+  ],
+  "sections": {
+    "hero": { "id": "inicio" },
+    "experience": { "id": "experiencia", "title": "Experiencia" },
+    "projects": { "id": "proyectos", "title": "Proyectos" },
+    "about": { "id": "sobre-mi", "title": "Sobre mí" }
   },
   "hero": {
     "image_alt": "Foto de perfil de Alejandro Fernández",
     "badge": "Disponible para trabajar",
     "title": "¡Hey! Soy Alejandro Fernández",
-    "intro_1": "Pronto",
+    "intro_1": "Pronto a ser ",
     "role": "Ingeniero de Sistemas",
-    "intro_2": "egresado de la",
+    "intro_2": " egresado de la ",
     "university": "Universidad del Cauca",
     "location": "de Popayán, Colombia 🇨🇴. Encaminado al desarrollo",
     "focus": "FullStack",
@@ -23,5 +30,95 @@
     "focus_desc": "para el desarrollo de aplicaciones Web...",
     "cv_button": "Ver CV",
     "cv_link": "/doc/Alejandro_Fernandez-CV_ESP.pdf"
+  },
+  "experience": {
+    "items": [
+      {
+        "date": "Agosto 2025 - Actualmente",
+        "title": "Arquitecto de Soluciones Cloud - Pasante",
+        "company": "Huawei Technologies",
+        "description": "Asistencia en el diseño e implementación de soluciones en la nube, contribuyendo al desarrollo de arquitecturas escalables, seguras y alineadas con las mejores prácticas del sector."
+      }
+    ],
+    "cta": "Saber más"
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "CONT APP - Aplicación contable",
+        "projectType": "Aplicación web",
+        "description": "Aplicación contable académica diseñada para preparar a los estudiantes de Contaduría Pública de la Universidad del Cauca en el uso de un software contable real. Actualmente en desarrollo.",
+        "link": "http://contables.unicauca.edu.co/dev/#/login",
+        "image": "/projects/contapp.webp",
+        "tags": ["ANGULAR", "TAILWIND"]
+      },
+      {
+        "title": "Portafolio personal",
+        "projectType": "Sitio web",
+        "description": "Portafolio personal desarrollado con Astro, mostrando proyectos, habilidades y experiencia profesional.",
+        "link": "https://ing-fernandez.com",
+        "image": "",
+        "tags": ["ASTRO", "TAILWIND"],
+        "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
+      },
+      {
+        "title": "Mapa con Marcadores",
+        "projectType": "Aplicación web",
+        "description": "Aplicación que permite la creación de marcadores en un mapa interactivo.",
+        "link": "",
+        "image": "",
+        "tags": ["ASTRO", "TAILWIND"],
+        "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
+      },
+      {
+        "title": "Libros Auxiliares en CONT APP - Microservicio",
+        "projectType": "Proyecto backend",
+        "description": "Microservicio encargado de la generación de Libros Auxiliares para cada empresa en CONT APP. Genera PDFs y Excels con la información contable correspondiente.",
+        "link": "",
+        "image": "",
+        "tags": ["JAVA", "SPRING", "POSTGRE"]
+      },
+      {
+        "title": "Manejo de Terceros en CONT APP - Microservicio",
+        "projectType": "Proyecto backend",
+        "description": "Microservicio encargado de la gestión de la información de terceros para cada empresa en CONT APP.",
+        "link": "",
+        "image": "",
+        "tags": ["JAVA", "SPRING", "MYSQL"]
+      },
+      {
+        "title": "Manejo de Facturas en CONT APP - Microservicio",
+        "projectType": "Proyecto backend",
+        "description": "Microservicio encargado del manejo y generación de facturas en formato PDF. Creado con Java y Spring Boot.",
+        "link": "",
+        "image": "",
+        "tags": ["JAVA", "SPRING", "MYSQL"]
+      }
+    ],
+    "actions": {
+      "code": "Código",
+      "preview": "Demo"
+    }
+  },
+  "about": {
+    "image_alt": "Foto de Alejandro Fernández",
+    "paragraphs": [
+      "Soy Alejandro Fernández. Estudiante de Ingeniería de Sistemas próximo a graduarme. Durante mis estudios he trabajado con lenguajes como Java, JavaScript, TypeScript, HTML y Python. He participado en proyectos que incluyen el desarrollo de aplicaciones web, especialmente en el BackEnd.",
+      "Como próximo ingeniero estoy preparado para contribuir con soluciones tecnológicas innovadoras, aportando mis conocimientos y continuar creciendo profesionalmente en un entorno dinámico."
+    ]
+  },
+  "contact": {
+    "email": {
+      "label": "Contáctame",
+      "copied": "Copiado al portapapeles"
+    }
+  },
+  "footer": {
+    "notice": "© {year} Portafolio inspirado en el desarrollado por {creator}. Casi todos los derechos reservados.",
+    "contact": "Contacto"
+  },
+  "languageSwitch": {
+    "current": "ES",
+    "target": "EN"
   }
 }

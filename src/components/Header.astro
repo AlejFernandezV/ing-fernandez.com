@@ -2,30 +2,11 @@
 import ThemeToggle from "./ThemeToggle.astro";
 import LanguageSwitch from "./LanguageSwitch.astro";
 
-// Recibimos los textos
-const { i18n } = Astro.props;
-const { currentLocale } = Astro;
+const { i18n, lang } = Astro.props;
+const currentLocale = lang ?? Astro.currentLocale ?? i18n.locale ?? "es";
 
-// Definimos la base para los enlaces (si es inglés, agregamos /en)
-const homeUrl = currentLocale === "en" ? "/en" : "";
-
-const navItems = [
-  {
-    title: i18n.nav.experience, // Texto traducido
-    label: "experiencia", // El label se mantiene igual para que el script del scroll funcione
-    url: `${homeUrl}/#experiencia`,
-  },
-  {
-    title: i18n.nav.projects,
-    label: "proyectos",
-    url: `${homeUrl}/#proyectos`,
-  },
-  {
-    title: i18n.nav.about,
-    label: "sobre-mi",
-    url: `${homeUrl}/#sobre-mi`,
-  },
-];
+const homeUrl = `/${currentLocale}`;
+const navItems = i18n.nav ?? [];
 ---
 
 <header
@@ -35,13 +16,13 @@ const navItems = [
     class="flex px-2 py-1 lg:text-lg md:text-sm font-medium text-gray-600 dark:text-gray-200 justify-center items-center rounded-full"
   >
     {
-      navItems.map((link) => (
+      navItems.map((link: any) => (
         <a
-          class="relative block px-2 py-1 transition hover:text-red dark:hover:red"
-          aria-label={link.label}
-          href={link.url}
+          href={`${homeUrl}/#${link.id}`}
+          aria-label={link.id}
+          class="relative block px-2 py-1 transition hover:text-redlight dark:hover:red"
         >
-          {link.title}
+          {link.label}
         </a>
       ))
     }
@@ -58,11 +39,11 @@ const navItems = [
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
 
-    const callback = (entries: any[]) => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
+            if (item.getAttribute("aria-label") === entry.target.id) {
               item.classList.add("text-red");
             } else {
               item.classList.remove("text-red");
@@ -82,7 +63,6 @@ const navItems = [
       observer.observe(section);
     });
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect();
