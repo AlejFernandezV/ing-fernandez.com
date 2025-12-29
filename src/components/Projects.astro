@@ -54,7 +54,10 @@ const TAGS = {
     class: "bg-[#336791] text-white",
     icon: PostgreSQL,
   },
-};
+} as const;
+
+type TagKey = keyof typeof TAGS;
+type Tag = (typeof TAGS)[TagKey];
 
 const { i18n } = Astro.props;
 const projects = i18n.projects?.items ?? [];
@@ -64,8 +67,19 @@ const actions = i18n.projects?.actions ?? { code: "Code", preview: "Preview" };
 <div class="flex flex-col gap-y-16">
   {
     projects.map(
-      ({ image, title, projectType, description, tags = [], link, github }) => {
-        const resolvedTags = tags.map((tagKey) => TAGS[tagKey]).filter(Boolean);
+      ({
+        image,
+        title,
+        projectType,
+        description,
+        tags = [],
+        link,
+        github,
+      }: any) => {
+        const resolvedTags: Tag[] = tags.flatMap((tagKey: any) => {
+          const tag = TAGS[tagKey as TagKey];
+          return tag ? [tag] : [];
+        });
 
         return (
           <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
