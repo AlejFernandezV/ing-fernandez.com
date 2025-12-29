@@ -32,19 +32,21 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const updateDimensions = () => {
-      if (containerRef.current) {
-        const { offsetWidth, offsetHeight } = containerRef.current;
-        setDimensions({ width: offsetWidth, height: offsetHeight });
+    if (!containerRef.current) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        setDimensions({
+          width: Math.round(width),
+          height: Math.round(height),
+        });
       }
-    };
+    });
 
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
+    observer.observe(containerRef.current);
 
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -73,12 +75,13 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
         } as CSSProperties
       }
       className={cn(
-        "relative z-10 h-full w-full rounded-[var(--border-radius)]",
+        "relative z-10 w-full aspect-video rounded-[var(--border-radius)]",
         className
       )}
       {...props}
     >
       <div
+        style={{ outline: "1px solid red" }}
         className={cn(
           "relative h-full min-h-[inherit] w-full rounded-[var(--card-content-radius)] bg-gray-100 p-4",
           "before:absolute before:-left-[var(--border-size)] before:-top-[var(--border-size)] before:-z-20 before:block",

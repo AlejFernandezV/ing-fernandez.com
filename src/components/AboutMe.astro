@@ -17,7 +17,9 @@ const imageAlt = i18n.about?.image_alt ?? "Alejandro Fernandez";
        dark:[&>p>strong]:text-redlight [&>p>strong]:font-roboto
        [&>p>strong]:font-roboto text-pretty order-2 md:order-1"
     >
-      {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      {paragraphs.map((paragraph: any) => (
+        <p set:html={paragraph}></p>
+      ))}
     </div>
   </div>
 

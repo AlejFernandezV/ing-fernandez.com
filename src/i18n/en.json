@@ -23,8 +23,10 @@
     "role": "Systems Engineer",
     "intro_2": " graduated from ",
     "university": "University of Cauca",
-    "location": " in Popayán, Colombia 🇨🇴. Focused on ",
-    "focus": "BackEnd",
+    "location": " in Popayán, Colombia. Focused on ",
+    "focus": "FullStack",
+    "focus_connector": " development with experience in ",
+    "second_focus": "Cloud Computing",
     "focus_desc": " development for web applications...",
     "cv_button": "View CV",
     "cv_link": "/doc/Alejandro_Fernandez-CV_ENG.pdf"
@@ -35,7 +37,7 @@
         "date": "August 2025 - Present",
         "title": "Cloud Solutions Architect - Intern",
         "company": "Huawei Technologies",
-        "description": "Assist in designing and implementing cloud solutions, contributing to scalable, secure architectures aligned with industry best practices."
+        "description": "I assisted in designing and implementing cloud solutions, contributing to scalable, secure architectures aligned with industry best practices. Also I contributed with IaC soutions to handling Backup and Recovering configuration tasks of some services."
       }
     ],
     "cta": "Learn more"
@@ -55,7 +57,7 @@
         "projectType": "Website",
         "description": "Personal portfolio built with Astro showcasing projects, skills, and professional experience.",
         "link": "https://ing-fernandez.com",
-        "image": "",
+        "image": "/projects/portfolio.webp",
         "tags": ["ASTRO", "TAILWIND"],
         "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
       },
@@ -64,12 +66,30 @@
         "projectType": "Web application",
         "description": "Application that allows creating markers on an interactive map.",
         "link": "",
-        "image": "",
-        "tags": ["ASTRO", "TAILWIND"],
+        "image": "/projects/marcadores.webp",
+        "tags": ["ANGULAR", "TAILWIND", "JAVA"],
         "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
       },
       {
-        "title": "Auxiliary Books in CONT APP - Microservice",
+        "title": "Restorer of Enterprise Router Configuration",
+        "projectType": "Python Script",
+        "description": "Scripts that allows backup, delete and restore configuration of Enterprise Routers in Huawei Cloud.",
+        "link": "",
+        "image": "",
+        "tags": ["PYTHON"],
+        "github": "https://github.com/AlejFernandezV/Enterprise-Router-Backup"
+      },
+      {
+        "title": "RollBacker of Services Configuration App",
+        "projectType": "Python Application",
+        "description": "App in developing that allows backup and restoration of info configuration of Enterprise Routers, VPC Subnets, WAF and CFW in Huawei Cloud.",
+        "link": "",
+        "image": "",
+        "tags": ["PYTHON"],
+        "github": "https://github.com/AlejFernandezV/Backup-Huawei-Cloud-Services"
+      },
+      {
+        "title": "Auxiliary Books Management in CONT APP - Microservice",
         "projectType": "Backend project",
         "description": "Microservice responsible for generating auxiliary books for each company in CONT APP. Produces PDFs and Excels with the corresponding accounting information.",
         "link": "",
@@ -101,8 +121,8 @@
   "about": {
     "image_alt": "Photo of Alejandro Fernández",
     "paragraphs": [
-      "I'm Alejandro Fernández, a Systems Engineering student about to graduate. During my studies I've worked with Java, JavaScript, TypeScript, HTML, and Python. I have taken part in projects involving web application development, especially the backend.",
-      "As an upcoming engineer I'm ready to contribute with innovative technological solutions, bringing my knowledge and continuing to grow professionally in a dynamic environment."
+      "I'm Alejandro Fernández, a <strong>Systems Engineering student</strong> about to graduate. I've worked with <strong>Java, JavaScript, TypeScript, Python</strong> and web fundamentals to build <strong>backend-first applications</strong>.",
+      "I enjoy turning requirements into <strong>scalable APIs</strong> and clean UI flows. I'm ready to contribute with <strong>cloud-aware solutions</strong> while growing in a <strong>dynamic team</strong>."
     ]
   },
   "contact": {

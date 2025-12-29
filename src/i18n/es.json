@@ -23,11 +23,11 @@
     "role": "Ingeniero de Sistemas",
     "intro_2": " egresado de la ",
     "university": "Universidad del Cauca",
-    "location": "de Popayán, Colombia 🇨🇴. Encaminado al desarrollo",
+    "location": " en Popayán, Colombia. Enfocado en el desarrollo ",
     "focus": "FullStack",
     "focus_connector": " con experiencia en ",
     "second_focus": "Cloud Computing",
-    "focus_desc": "para el desarrollo de aplicaciones Web...",
+    "focus_desc": " para el desarrollo de aplicaciones web...",
     "cv_button": "Ver CV",
     "cv_link": "/doc/Alejandro_Fernandez-CV_ESP.pdf"
   },
@@ -57,7 +57,7 @@
         "projectType": "Sitio web",
         "description": "Portafolio personal desarrollado con Astro, mostrando proyectos, habilidades y experiencia profesional.",
         "link": "https://ing-fernandez.com",
-        "image": "",
+        "image": "/projects/portfolio.webp",
         "tags": ["ASTRO", "TAILWIND"],
         "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
       },
@@ -66,9 +66,27 @@
         "projectType": "Aplicación web",
         "description": "Aplicación que permite la creación de marcadores en un mapa interactivo.",
         "link": "",
-        "image": "",
-        "tags": ["ASTRO", "TAILWIND"],
+        "image": "/projects/marcadores.webp",
+        "tags": ["ANGULAR", "TAILWIND", "JAVA"],
         "github": "https://github.com/AlejFernandezV/ing-fernandez.com"
+      },
+      {
+        "title": "Restaurador de Configuración de Routers Empresariales",
+        "projectType": "Script de Python",
+        "description": "Scripts que permiten respaldar, eliminar y restaurar la configuración de Routers Empresariales en Huawei Cloud.",
+        "link": "",
+        "image": "",
+        "tags": ["PYTHON"],
+        "github": "https://github.com/AlejFernandezV/Enterprise-Router-Backup"
+      },
+      {
+        "title": "RollBacker de Configuración de Servicios",
+        "projectType": "Aplicación Python",
+        "description": "App en desarrollo que permite respaldar y restaurar la configuración de Routers Empresariales, Subredes VPC, WAF y CFW en Huawei Cloud.",
+        "link": "",
+        "image": "",
+        "tags": ["PYTHON"],
+        "github": "https://github.com/AlejFernandezV/Backup-Huawei-Cloud-Services"
       },
       {
         "title": "Libros Auxiliares en CONT APP - Microservicio",
@@ -103,8 +121,8 @@
   "about": {
     "image_alt": "Foto de Alejandro Fernández",
     "paragraphs": [
-      "Soy Alejandro Fernández. Estudiante de Ingeniería de Sistemas próximo a graduarme. Durante mis estudios he trabajado con lenguajes como Java, JavaScript, TypeScript, HTML y Python. He participado en proyectos que incluyen el desarrollo de aplicaciones web, especialmente en el BackEnd.",
-      "Como próximo ingeniero estoy preparado para contribuir con soluciones tecnológicas innovadoras, aportando mis conocimientos y continuar creciendo profesionalmente en un entorno dinámico."
+      "Soy Alejandro Fernández, <strong>estudiante de Ingeniería de Sistemas</strong> a punto de graduarme. He trabajado con <strong>Java, JavaScript, TypeScript, Python</strong> y bases web para construir <strong>aplicaciones con enfoque backend</strong>.",
+      "Disfruto convertir requerimientos en <strong>APIs escalables</strong> y flujos de interfaz claros. Estoy listo para aportar <strong>soluciones orientadas a la nube</strong> mientras crezco en un <strong>equipo dinámico</strong>."
     ]
   },
   "contact": {

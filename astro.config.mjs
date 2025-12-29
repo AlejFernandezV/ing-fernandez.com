@@ -17,5 +17,5 @@ export default defineConfig({
 
   output: "server",
   adapter: vercel(),
-  site: "https://ing-fernandez.com/",
+  site: "https://ingfernandez.cloud/",
 });

@@ -10,7 +10,7 @@ const ctaLabel = i18n.experience?.cta ?? "";
   <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
     <ol class="relative mt-16">
       {
-        experienceList.map((experience) => (
+        experienceList.map((experience: any) => (
           <li>
             <ExperienceItem {...experience} ctaLabel={ctaLabel} />
           </li>
